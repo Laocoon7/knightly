@@ -1,0 +1,19 @@
+[package]
+name = "knightly"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.12" # A refreshingly simple data-driven game engine and app framework
+
+serde = { version = "1", features = ["derive", "rc", "alloc"] } # A generic serialization/deserialization framework
+ron = { version = "0.8", features = ["integer128"] } # Rusty Object Notation
+toml = "0.8" # A native Rust encoder and decoder of TOML-formatted files and streams
+
+thiserror = { version = "1" } # This library provides a convenient derive macro for the standard library's std::error::Error trait.
+
+# keep the following in sync with Bevy's dependencies
+# bevy/crates/bevy_winit
+winit = { version = "0.28.7", default-features = false } # Cross-platform window creation library.
+# bevy/crates/bevy_render
+image = { version = "0.24", default-features = false } # Imaging library written in Rust. Provides basic filters and decoders for the most common image formats.

@@ -1,0 +1,11 @@
+(
+    name: "npc",
+    atlas_path: "data/atlases/actors.atlas",
+    index: 0,
+    color: Rgba(
+        red: 1.0,
+        green: 0.0,
+        blue: 0.0,
+        alpha: 1.0,
+    ),
+)
