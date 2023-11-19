@@ -1,17 +1,17 @@
 use bevy::prelude::*;
 use bevy_fortress::prelude::*;
 
-use crate::{components::Position, constants::LAYER_ACTOR, types::traits::SpawnAt};
+use crate::{components::Position, constants::LAYER_TERRAIN, types::traits::SpawnAt};
 
 #[derive(Asset, TypePath, Clone)]
-pub struct ActorAsset {
+pub struct TerrainAsset {
     pub name: String,
     pub texture_atlas: Handle<TextureAtlas>,
     pub index: usize,
     pub color: Color,
 }
 
-impl SpawnAt for ActorAsset {
+impl SpawnAt for TerrainAsset {
     fn add_to_entity(&self, commands: &mut Commands, entity: Entity, position: Coord) {
         commands.entity(entity).insert((
             Name::new(self.name.clone()),
@@ -23,7 +23,7 @@ impl SpawnAt for ActorAsset {
                     ..Default::default()
                 },
                 texture_atlas: self.texture_atlas.clone(),
-                transform: Transform::from_xyz(position.x as f32, position.y as f32, LAYER_ACTOR),
+                transform: Transform::from_xyz(position.x as f32, position.y as f32, LAYER_TERRAIN),
                 visibility: Visibility::Visible,
                 ..Default::default()
             },

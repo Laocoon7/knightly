@@ -4,7 +4,7 @@ pub use self::systems_plugin::*;
 mod build_camera;
 mod set_window_icon;
 
-mod setup;
+mod load_assets;
 
 mod enter_game;
 

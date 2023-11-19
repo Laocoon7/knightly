@@ -1,5 +1,6 @@
 pub mod actors;
 pub mod atlases;
+pub mod terrain;
 
 mod assets_plugin;
 pub use self::assets_plugin::*;

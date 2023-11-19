@@ -10,7 +10,12 @@ serde = { version = "1", features = ["derive", "rc", "alloc"] } # A generic seri
 ron = { version = "0.8", features = ["integer128"] } # Rusty Object Notation
 toml = "0.8" # A native Rust encoder and decoder of TOML-formatted files and streams
 
+rand = "0.8" # Random number generators and other randomness functionality.
+rand_pcg = { version = "0.3", features = ["serde1"] } # Selected PCG random number generators
+
 thiserror = { version = "1" } # This library provides a convenient derive macro for the standard library's std::error::Error trait.
+
+bevy_fortress = { version = "0.1" } # My personal library
 
 # keep the following in sync with Bevy's dependencies
 # bevy/crates/bevy_winit

@@ -1,0 +1,9 @@
+(
+    name: "terrain",
+    texture_path: "sprites/terrain.png",
+    tile_size: (16.0, 16.0),
+    columns: 2,
+    rows: 1,
+    padding: None,
+    offset: None,
+)

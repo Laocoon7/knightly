@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
 use super::{
-    build_camera::build_camera, enter_game::enter_game, left_walker::left_walker, player_input::player_input,
-    set_window_icon::set_window_icon, setup::setup, update_positions::update_positions,
+    build_camera::build_camera, enter_game::enter_game, left_walker::left_walker, load_assets::load_assets,
+    player_input::player_input, set_window_icon::set_window_icon, update_positions::update_positions,
 };
 use crate::states::{AppState, GameState};
 
@@ -11,7 +11,7 @@ pub struct SystemsPlugin;
 impl Plugin for SystemsPlugin {
     fn build(&self, app: &mut App) {
         // Change the window icon and start the camera
-        app.add_systems(Startup, (set_window_icon, build_camera, setup));
+        app.add_systems(Startup, (set_window_icon, build_camera, load_assets));
 
         app.add_systems(
             Update,
