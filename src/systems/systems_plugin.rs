@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
 use super::{
-    build_camera::build_camera, enter_game::enter_game, left_walker::left_walker, load_assets::load_assets,
-    player_input::player_input, set_window_icon::set_window_icon, update_positions::update_positions,
+    build_camera::build_camera, enter_game::enter_game, load_assets::load_assets, player_input::player_input,
+    set_window_icon::set_window_icon, update_positions::update_positions,
 };
 use crate::states::{AppState, GameState};
 
@@ -24,11 +24,6 @@ impl Plugin for SystemsPlugin {
                 .chain()
                 .run_if(in_state(AppState::InGame))
                 .run_if(in_state(GameState::Playing)),
-        );
-
-        app.add_systems(
-            PostUpdate,
-            left_walker.run_if(in_state(AppState::InGame)).run_if(in_state(GameState::Playing)),
         );
     }
 }
